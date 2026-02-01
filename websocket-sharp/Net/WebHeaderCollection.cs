@@ -1105,7 +1105,7 @@ namespace WebSocketSharp.Net
     ///   -or-
     ///   </para>
     ///   <para>
-    ///   The name part of <paramref name="header"/> is an empty string.
+    ///   <paramref name="header"/> does not include a header name.
     ///   </para>
     ///   <para>
     ///   -or-
