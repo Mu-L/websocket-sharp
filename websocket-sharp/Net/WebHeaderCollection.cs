@@ -742,7 +742,8 @@ namespace WebSocketSharp.Net
     /// characters.
     /// </exception>
     /// <exception cref="InvalidOperationException">
-    /// This instance does not allow the response header.
+    /// The set operation is not available if the current instance does not
+    /// allow the response header.
     /// </exception>
     public string this[HttpResponseHeader header] {
       get {
