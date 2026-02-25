@@ -716,7 +716,8 @@ namespace WebSocketSharp.Net
     /// Gets or sets the specified response header.
     /// </summary>
     /// <value>
-    /// A <see cref="string"/> that represents the value of the response header.
+    /// A <see cref="string"/> that represents the value of the specified
+    /// response header.
     /// </value>
     /// <param name="header">
     ///   <para>
