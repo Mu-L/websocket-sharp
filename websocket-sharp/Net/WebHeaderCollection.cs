@@ -670,7 +670,13 @@ namespace WebSocketSharp.Net
     /// Gets or sets the specified request header.
     /// </summary>
     /// <value>
-    /// A <see cref="string"/> that represents the value of the request header.
+    ///   <para>
+    ///   A <see cref="string"/> that represents the value of the specified
+    ///   request header.
+    ///   </para>
+    ///   <para>
+    ///   The get operation returns <see langword="null"/> if not found.
+    ///   </para>
     /// </value>
     /// <param name="header">
     ///   <para>
