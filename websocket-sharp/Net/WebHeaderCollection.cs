@@ -1047,7 +1047,7 @@ namespace WebSocketSharp.Net
     /// the restricted header list.
     /// </summary>
     /// <param name="headerName">
-    /// A <see cref="string"/> that specifies the name of the header to add.
+    /// A <see cref="string"/> that specifies the name of a header to add.
     /// </param>
     /// <param name="headerValue">
     /// A <see cref="string"/> that specifies the value of the header to add.
