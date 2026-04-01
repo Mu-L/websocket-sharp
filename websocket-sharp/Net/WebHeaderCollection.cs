@@ -1835,7 +1835,7 @@ namespace WebSocketSharp.Net
     /// A <see cref="string"/> that specifies the name of a header to set.
     /// </param>
     /// <param name="value">
-    /// A <see cref="string"/> that specifies the value of the header to set.
+    /// A <see cref="string"/> that specifies the value of the header.
     /// </param>
     /// <exception cref="ArgumentException">
     ///   <para>
