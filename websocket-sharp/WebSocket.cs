@@ -83,6 +83,7 @@ namespace WebSocketSharp
     private bool                           _emitOnPing;
     private static readonly byte[]         _emptyBytes;
     private bool                           _enableRedirection;
+    private Func<bool>                     _executorBeforeClose;
     private Func<bool>                     _executorBeforeOpen;
     private string                         _extensions;
     private object                         _forMessageEventQueue;
@@ -324,6 +325,17 @@ namespace WebSocketSharp
 
       set {
         _handshakeRequestResponder = value;
+      }
+    }
+
+    // As server
+    internal Func<bool> ExecutorBeforeClose {
+      get {
+        return _executorBeforeClose;
+      }
+
+      set {
+        _executorBeforeClose = value;
       }
     }
 
@@ -1809,6 +1821,11 @@ namespace WebSocketSharp
         _log.Error (ex.Message);
         _log.Debug (ex.ToString ());
       }
+    }
+
+    private bool executeBeforeClose ()
+    {
+      return _executorBeforeClose != null ? _executorBeforeClose () : true;
     }
 
     private bool executeBeforeOpen ()
