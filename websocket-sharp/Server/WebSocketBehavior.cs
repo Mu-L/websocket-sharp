@@ -670,11 +670,6 @@ namespace WebSocketSharp.Server
 
     private void onClose (object sender, CloseEventArgs e)
     {
-      if (!_registered)
-        return;
-
-      _sessions.Remove (_id);
-
       OnClose (e);
     }
 
@@ -725,6 +720,7 @@ namespace WebSocketSharp.Server
       _websocket = context.WebSocket;
       _websocket.CustomHandshakeRequestChecker = checkHandshakeRequest;
       _websocket.CustomHandshakeRequestResponder = respondToHandshakeRequest;
+      _websocket.ExecutorBeforeClose = executeBeforeClose;
       _websocket.ExecutorBeforeOpen = executeBeforeOpen;
 
       if (_emitOnPing)

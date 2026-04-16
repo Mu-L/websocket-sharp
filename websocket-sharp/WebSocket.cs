@@ -1447,6 +1447,11 @@ namespace WebSocketSharp
 
       _readyState = WebSocketState.Closed;
 
+      var canEmit = executeBeforeClose ();
+
+      if (!canEmit)
+        return;
+
       var e = new CloseEventArgs (payloadData, res);
 
       try {
@@ -2795,6 +2800,11 @@ namespace WebSocketSharp
       _log.Trace ("End closing the connection.");
 
       _readyState = WebSocketState.Closed;
+
+      var canEmit = executeBeforeClose ();
+
+      if (!canEmit)
+        return;
 
       var e = new CloseEventArgs (payloadData, res);
 
