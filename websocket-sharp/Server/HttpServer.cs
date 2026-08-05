@@ -359,10 +359,6 @@ namespace WebSocketSharp.Server
     /// <summary>
     /// Gets or sets the path to the document folder of the server.
     /// </summary>
-    /// <remarks>
-    /// The set operation works if the current state of the server is
-    /// Ready or Stop.
-    /// </remarks>
     /// <value>
     ///   <para>
     ///   A <see cref="string"/> that represents a path to the folder
@@ -394,6 +390,10 @@ namespace WebSocketSharp.Server
     /// </exception>
     /// <exception cref="ArgumentNullException">
     /// The value specified for a set operation is <see langword="null"/>.
+    /// </exception>
+    /// <exception cref="InvalidOperationException">
+    /// The set operation is not available when the current state of
+    /// the server is neither Ready nor Stop.
     /// </exception>
     public string DocumentRootPath {
       get {
