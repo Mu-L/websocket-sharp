@@ -633,10 +633,6 @@ namespace WebSocketSharp.Server
     /// Gets or sets the delegate called to find the credentials for
     /// an identity used to authenticate a client.
     /// </summary>
-    /// <remarks>
-    /// The set operation works if the current state of the server is
-    /// Ready or Stop.
-    /// </remarks>
     /// <value>
     ///   <para>
     ///   A <see cref="T:System.Func{IIdentity, NetworkCredential}"/>
@@ -657,6 +653,10 @@ namespace WebSocketSharp.Server
     ///   The default value is <see langword="null"/>.
     ///   </para>
     /// </value>
+    /// <exception cref="InvalidOperationException">
+    /// The set operation is not available when the current state of
+    /// the server is neither Ready nor Stop.
+    /// </exception>
     public Func<IIdentity, NetworkCredential> UserCredentialsFinder {
       get {
         return _listener.UserCredentialsFinder;
