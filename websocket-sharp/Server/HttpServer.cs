@@ -810,11 +810,6 @@ namespace WebSocketSharp.Server
       _state = ServerState.Stop;
     }
 
-    private bool canSet ()
-    {
-      return _state == ServerState.Ready || _state == ServerState.Stop;
-    }
-
     private bool checkCertificate (out string message)
     {
       message = null;
