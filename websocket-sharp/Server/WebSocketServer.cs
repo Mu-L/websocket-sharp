@@ -63,7 +63,6 @@ namespace WebSocketSharp.Server
     private static readonly string             _defaultRealm;
     private string                             _hostname;
     private bool                               _isDnsStyle;
-    private bool                               _secure;
     private TcpListener                        _listener;
     private Logger                             _log;
     private int                                _port;
@@ -71,6 +70,7 @@ namespace WebSocketSharp.Server
     private string                             _realmInUse;
     private Thread                             _receiveThread;
     private bool                               _reuseAddress;
+    private bool                               _secure;
     private WebSocketServiceManager            _services;
     private ServerSslConfiguration             _sslConfig;
     private ServerSslConfiguration             _sslConfigInUse;
