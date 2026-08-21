@@ -1149,7 +1149,7 @@ namespace WebSocketSharp.Server
     /// </remarks>
     /// <exception cref="InvalidOperationException">
     ///   <para>
-    ///   There is no server certificate for secure connection.
+    ///   The server certificate for a secure connection is not present.
     ///   </para>
     ///   <para>
     ///   -or-
