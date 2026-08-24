@@ -1100,7 +1100,7 @@ namespace WebSocketSharp.Server
     /// </summary>
     /// <remarks>
     /// The service is stopped with close status 1001 (going away)
-    /// if the current state of the service is Start.
+    /// when the current state of the service is Start.
     /// </remarks>
     /// <returns>
     /// <c>true</c> if the service is successfully found and removed;
