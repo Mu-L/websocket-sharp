@@ -530,7 +530,7 @@ namespace WebSocketSharp.Server
     /// configuration used to provide a secure connection.
     /// </value>
     /// <exception cref="InvalidOperationException">
-    /// The server does not provide secure connections.
+    /// The server does not provide a secure connection.
     /// </exception>
     public ServerSslConfiguration SslConfiguration {
       get {
