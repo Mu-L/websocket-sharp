@@ -857,7 +857,7 @@ namespace WebSocketSharp.Server
           var conf = new ServerSslConfiguration (src);
 
           if (conf.ServerCertificate == null) {
-            var msg = "There is no server certificate for secure connection.";
+            var msg = "The server certificate for a secure connection is not present.";
 
             throw new InvalidOperationException (msg);
           }
