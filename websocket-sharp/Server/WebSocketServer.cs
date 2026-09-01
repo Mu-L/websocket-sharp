@@ -452,10 +452,6 @@ namespace WebSocketSharp.Server
     /// <summary>
     /// Gets or sets the name of the realm associated with the server.
     /// </summary>
-    /// <remarks>
-    /// The set operation works if the current state of the server is
-    /// Ready or Stop.
-    /// </remarks>
     /// <value>
     ///   <para>
     ///   A <see cref="string"/> that represents the name of the realm.
@@ -468,6 +464,10 @@ namespace WebSocketSharp.Server
     ///   The default value is <see langword="null"/>.
     ///   </para>
     /// </value>
+    /// <exception cref="InvalidOperationException">
+    /// The set operation is not available when the current state of
+    /// the server is neither Ready nor Stop.
+    /// </exception>
     public string Realm {
       get {
         return _realm;
