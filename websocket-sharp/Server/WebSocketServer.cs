@@ -491,14 +491,8 @@ namespace WebSocketSharp.Server
     /// be bound to an address that is already in use.
     /// </summary>
     /// <remarks>
-    ///   <para>
-    ///   You should set this property to <c>true</c> if you would like to
-    ///   resolve to wait for socket in TIME_WAIT state.
-    ///   </para>
-    ///   <para>
-    ///   The set operation works if the current state of the server is
-    ///   Ready or Stop.
-    ///   </para>
+    /// You should set this property to <c>true</c> if you would like to
+    /// resolve to wait for socket in TIME_WAIT state.
     /// </remarks>
     /// <value>
     ///   <para>
@@ -509,6 +503,10 @@ namespace WebSocketSharp.Server
     ///   The default value is <c>false</c>.
     ///   </para>
     /// </value>
+    /// <exception cref="InvalidOperationException">
+    /// The set operation is not available when the current state of
+    /// the server is neither Ready nor Stop.
+    /// </exception>
     public bool ReuseAddress {
       get {
         return _reuseAddress;
